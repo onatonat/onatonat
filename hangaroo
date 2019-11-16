@@ -1,0 +1,32 @@
+def hangaroo(secretWord):
+    mistakesMade = 0
+    lettersGuessed =[]
+
+    print('Welcome to the game Hangaroo!')
+    print('The word you have to guess is ' + str(len(secretWord)) + ' letters long.' )
+    print(getGuessedWord(secretWord, lettersGuessed))
+
+    while mistakesMade != 3:
+        if isWordGuessed(secretWord, lettersGuessed):
+            return print('I guess you won then.')
+        print('You have ' + str(3-mistakesMade) + ' lives left.')
+        print('Available Letters: ' + getAvailableLetters(lettersGuessed))
+        guess = input('Please guess a letter: ')
+        guess = str(guess)
+        guessInLowerCase = guess.lower()
+
+        if guessInLowerCase not in lettersGuessed:
+            lettersGuessed.append(guessInLowerCase)
+
+            if guessInLowerCase in secretWord:
+                print("Good guess: " + getGuessedWord(secretWord, lettersGuessed))
+                print('-----------')
+            else:
+                print("No such letter is in my word: " + getGuessedWord(secretWord, lettersGuessed))
+                print('-----------')
+                mistakesMade += 1
+        else:
+            print("You've already guessed that: " + getGuessedWord(secretWord, lettersGuessed))
+            print('-----------')
+
+    return print("You lost. The word was " + str(secretWord))
