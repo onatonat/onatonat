@@ -1,0 +1,8 @@
+def getAvailableLetters(lettersGuessed):
+    import string
+    alphabet = list(string.ascii_lowercase)
+    z= ' '
+    for a in alphabet:
+        if a not in lettersGuessed:
+            z = z+a
+    return ' '.join(z)
