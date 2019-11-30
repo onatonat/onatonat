@@ -1,0 +1,12 @@
+import numpy as np
+x=np.arange(1,101).reshape(10,10)
+#Creates an array or the first 100 integer and reshapes it into 10x10
+a=(x*x)
+print('10x10 ndarray of the square of the first 100 integers\n'+ str(a))
+b=a%3
+c=np.where(b==0)
+#finds the value of b with zero remainders
+d=a[c]
+#Slices the elements whicha re divisible by three on the original array
+print('The elements that are divisible by three are:\n' +str(d))
+np.save('div_by_3', d)
