@@ -1,0 +1,8 @@
+import numpy as np
+X=np.random.random((5,5))
+#create a 5x5 random matrix
+x=X.mean()
+sd=X.std()
+Z=(X-x)/sd
+print(Z)
+np.save('X'_normalized',Z)
