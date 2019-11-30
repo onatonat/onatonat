@@ -1,0 +1,9 @@
+import pandas as pd
+cars=pd.read_csv('cars.csv')
+first=cars[0:5]
+#Get the subset of the first five rows
+print('The first five cars are:\n'+str(first))
+print('    ')
+last=cars[27:32]
+#Subset of the last five rows
+print('The last five cars are:\n'+str(last))
