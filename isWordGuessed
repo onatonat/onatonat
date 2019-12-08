@@ -1,7 +1,0 @@
-def isWordGuessed(secretWord, lettersGuessed):
-    for y in secretWord:
-        if y in lettersGuessed:
-            continue
-        else:
-            return False
-    return True
